@@ -128,6 +128,11 @@ app.post("/users", (req, res) => {
     user: newUser,
   });
 });
+// Middleware
+app.use(express.json());
+app.use(requestLogger); 
+
+app.use(errorHandler);
 
 // Start the server
 app.listen(port, () => {
